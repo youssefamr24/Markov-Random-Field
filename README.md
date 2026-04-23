@@ -1,2 +1,12 @@
-# Markov-Random-Field
-A Markov Random Field implementation for a three-variable triangle network. Built from scratch to satisfy strict academic constraints, this project computes joint distributions, partition functions Z, and normalized marginals using factor multiplication and manual accumulation, without using any external probability or math libraries.
+Project Name: Markov Random Field Triangle Network Implementation
+
+Description:This project implements an MRF from scratch using three binary variables (A, B, C) in a circular structure.
+	    We compute joint distributions, the partition function Z, and normalized marginals without the use of predefined
+            probability or normalization libraries.
+
+
+The Rules:
+
+	- No use of pgmpy, numpy (for math), or scipy
+	- No hardcoding results
+	- Everything computed via factor multiplication.

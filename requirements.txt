@@ -1,0 +1,2 @@
+# No computational libraries allowed per assignment rules
+# Only standard Python 3.x features to be used.
