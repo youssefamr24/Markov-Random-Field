@@ -34,6 +34,8 @@ def all_comp(a, b, c):
                 joint_dist[(val_a, val_b, val_c)] = prob
     return joint_dist
 
+
+
 # Task 3: Compute the Partition Function
 def partition_function(joint_dist):
     Z = 0
@@ -41,3 +43,22 @@ def partition_function(joint_dist):
         Z += prob
     return Z
 
+
+
+#  Task 4:
+def print_normalized_table(joint_dist, z):
+    print("A  B  C | Unnormalized | Normalized P(A,B,C)")
+    print("-" * 50)
+    
+    normalized_dist = {}
+    for (a, b, c), unnorm_val in joint_dist.items():
+        prob = unnorm_val / z
+        normalized_dist[(a, b, c)] = prob
+        print(f"A{a} B{b} C{c} |    {unnorm_val:2} / {z}    |    {prob:.4f}")
+        
+    return normalized_dist
+values = [0, 1]
+unnorm_results = all_comp(values, values, values)
+z_val = partition_function(unnorm_results)
+print(f"Partition Function Z = {z_val}\n")
+normalized_results = print_normalized_table(unnorm_results, z_val)
