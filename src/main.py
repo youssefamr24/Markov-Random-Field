@@ -77,3 +77,23 @@ print(query_prob(1, 1, 1))
 
 print("\nQuery P(A=0, B=1, C=0):")
 print(query_prob(0, 1, 0))
+
+
+#Task 6: Marginal Probability Function
+def marginal(variable,value,normalized_dist=normalized_results):
+    total = 0
+    for (a,b,c), prob in normalized_dist.items():
+        if variable == 'A' and a == value:
+            total += prob
+        elif variable == 'B' and b == value:
+            total += prob
+        elif variable == 'C' and c == value:
+            total += prob
+    return total
+
+#Example usage
+print("\nMarginal P(A=1):")
+print(marginal('A',1))
+
+print("\nMarginal P(C=0):")
+print(marginal('C',0))
