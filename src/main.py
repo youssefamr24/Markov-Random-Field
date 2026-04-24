@@ -33,3 +33,11 @@ def all_comp(a, b, c):
                 prob = phi1(val_a, val_b) * phi2(val_b, val_c) * phi3(val_c, val_a)
                 joint_dist[(val_a, val_b, val_c)] = prob
     return joint_dist
+
+# Task 3: Compute the Partition Function
+def partition_function(joint_dist):
+    Z = 0
+    for prob in joint_dist.values():
+        Z += prob
+    return Z
+
