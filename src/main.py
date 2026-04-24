@@ -62,3 +62,18 @@ unnorm_results = all_comp(values, values, values)
 z_val = partition_function(unnorm_results)
 print(f"Partition Function Z = {z_val}\n")
 normalized_results = print_normalized_table(unnorm_results, z_val)
+
+
+# Task 5: General Probability Query Function
+def query_prob(a, b, c, normalized_dist = normalized_results):
+    if (a, b, c) in normalized_dist:
+        return normalized_dist[(a, b, c)]
+    else:
+        return 0
+    
+# Example query
+print("\nQuery P(A=1, B=1, C=1):")
+print(query_prob(1, 1, 1))
+
+print("\nQuery P(A=0, B=1, C=0):")
+print(query_prob(0, 1, 0))
