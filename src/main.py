@@ -23,3 +23,13 @@ def phi3(c, a):
         return 3
     else:
         return 1
+
+# Task 2: Construct the Joint Distribution (Unnormalized)
+def all_comp(a, b, c):
+    joint_dist = {}
+    for val_a in a:
+        for val_b in b:
+            for val_c in c:
+                prob = phi1(val_a, val_b) * phi2(val_b, val_c) * phi3(val_c, val_a)
+                joint_dist[(val_a, val_b, val_c)] = prob
+    return joint_dist
